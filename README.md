@@ -33,5 +33,9 @@ This project demonstrates how classical machine learning techniques can be appli
 - Scikit-learn (TF-IDF, Cosine Similarity)
 
 ---
+## Deployment
 
+The application is deployed using Streamlit Community Cloud and can be accessed via a public URL.
+
+https://nextreads.streamlit.app/
 
