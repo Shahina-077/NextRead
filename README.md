@@ -1,5 +1,5 @@
 # Next Read 📚  
-*A Content-Based Book Recommendation System*
+*A Content-Based Book Recommendation App*
 
 ## Overview
 Next Read is a web-based book recommendation application that suggests similar books based on a user’s search by **book title, author, or genre**.  
