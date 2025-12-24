@@ -8,23 +8,14 @@ from recommender import (
     recommend_by_genre
 )
 
-# --------------------------------------------------
-# Streamlit config (MUST be first Streamlit command)
-# --------------------------------------------------
 st.set_page_config(page_title="Discover books that match your favourite reads 📚")
 
-# --------------------------------------------------
-# Session state initialization
-# --------------------------------------------------
 if "selected_book" not in st.session_state:
     st.session_state.selected_book = None
 
 if "results" not in st.session_state:
     st.session_state.results = None
 
-# --------------------------------------------------
-# DETAIL PAGE (runs first if a book is selected)
-# --------------------------------------------------
 if st.session_state.selected_book is not None:
     book = df[df['Book'] == st.session_state.selected_book].iloc[0]
 
@@ -75,9 +66,6 @@ if st.session_state.selected_book is not None:
 
     st.stop()
 
-# --------------------------------------------------
-# MAIN SEARCH PAGE
-# --------------------------------------------------
 st.title("Discover books that match your favourite reads 📚")
 
 search_type = st.selectbox(
@@ -87,9 +75,6 @@ search_type = st.selectbox(
 
 query = st.text_input("Enter book title, author, or genre")
 
-# --------------------------------------------------
-# SEARCH ACTION (store results in session_state)
-# --------------------------------------------------
 if st.button("Get Recommendations"):
 
     if query.strip() == "":
@@ -105,9 +90,6 @@ if st.button("Get Recommendations"):
         else:
             st.session_state.results = recommend_by_genre(query)
 
-# --------------------------------------------------
-# DISPLAY RESULTS (independent of button click)
-# --------------------------------------------------
 if st.session_state.results is not None:
 
     if st.session_state.results.empty:
