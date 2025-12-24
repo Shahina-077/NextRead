@@ -1,13 +1,12 @@
 import pandas as pd
 import re
 
-# Load dataset
 df = pd.read_csv("goodreads_data.csv")
 
-# Keep only required columns
+# To Keep only required columns
 df = df[['Book', 'Author', 'Description', 'Genres']]
 
-# Handle missing values
+# To Handle missing values
 df['Description'] = df['Description'].fillna('')
 df['Genres'] = df['Genres'].fillna('')
 df['Author'] = df['Author'].fillna('')
